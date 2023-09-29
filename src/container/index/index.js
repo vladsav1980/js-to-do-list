@@ -34,6 +34,7 @@ export class Todo {
   static #template = null
   static #input = null
   static #button = null
+  static #clear = null
 
   static init = () => {
     this.#template =
@@ -44,11 +45,20 @@ export class Todo {
     this.#block = document.querySelector('.task__list')
     this.#input = document.querySelector('.form__input')
     this.#button = document.querySelector('.form__button')
+    this.#clear = document.querySelector(
+      '.form__button--clear',
+    )
 
     this.#button.onclick = this.#handleAdd
+    this.#input.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        this.#handleAdd()
+      }
+    })
+
+    this.#clear.onclick = this.#handleClear
     this.#loadData()
     this.#render()
-    console.log(this.#list)
   }
 
   static #handleAdd = () => {
@@ -82,6 +92,8 @@ export class Todo {
     id.innerText = `${data.id}.`
 
     text.innerText = data.text
+
+    text.onclick = () => this.#handleDo(data, btnDo, el)
 
     btnDo.onclick = () => this.#handleDo(data, btnDo, el)
 
@@ -128,6 +140,15 @@ export class Todo {
   static #deleteById = (id) => {
     this.#list = this.#list.filter((item) => item.id !== id)
     return true
+  }
+
+  static #handleClear = (data) => {
+    if (confirm('Are you sure?')) {
+      this.#list = []
+      this.#count = 0
+      localStorage.removeItem(this.#NAME)
+      this.#render()
+    }
   }
 }
 

@@ -18,7 +18,7 @@
 
 .form {
 	display: grid;
-	grid-template-columns: 5fr 1fr;
+	grid-template-columns: 5fr 1fr 1fr;
 	gap: 12px;
 
 	&__button {
@@ -31,6 +31,11 @@
 
 		&:hover {
 			opacity: 0.5;
+		}
+
+		&--clear {
+			background-color: red;
+			border-color: red;
 		}
 	}
 
