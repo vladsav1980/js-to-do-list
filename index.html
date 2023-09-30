@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="page">
+        <h1 class="title">Shopping List</h1>
+    
+        <div class="form">
+            <input type="text" class="form__input" placeholder="Enter new item...">
+            <button class="form__button">Add</button>
+            <button class="form__button form__button--clear">Clear</button>
+        </div>
+    
+        <main class="task__list">
+    
+        </main>
+    
+        <template id="task">
+            <div class="task">
+                <span class="task__number">1.</span>
+                <span class="task__text">Some placeholder</span>
+                <button class="task__button task__button--do"></button>
+                <button class="task__button task__button--cancel"></button>
+            </div>
+        </template>
+    
+    </div>
+       
+</body>
+<script src="index.js"></script>
+</html>
