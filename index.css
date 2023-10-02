@@ -45,6 +45,13 @@
   color: #909294;
 }
 
+.category {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px 0;
+  border-bottom: 1px solid #d3dee9;
+}
+
 .task__list {
   display: flex;
   flex-direction: column;
@@ -56,7 +63,6 @@
   gap: 12px;
   align-items: center;
   padding: 8px 0;
-  border-bottom: 1px solid #d3dee9;
 }
 .task__number {
   color: #212529;
