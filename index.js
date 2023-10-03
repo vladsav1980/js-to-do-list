@@ -131,6 +131,7 @@ class Todo {
       'мартіні',
       'сідер',
       'лікер',
+      'бренді',
     ],
     'Торти і тістечка': [
       'торт',
@@ -319,7 +320,6 @@ class Todo {
       'energy',
       'syrup',
       'tonic',
-      'orange',
     ],
     Confectionery: [
       'cookie',
@@ -409,7 +409,7 @@ class Todo {
     Alcohol: [
       'wine',
       'beer',
-      'gorilla',
+      'vodka',
       'whisky',
       'gin',
       'cognac',
@@ -422,7 +422,9 @@ class Todo {
       'Sambuk',
       'whisky',
       'Martini',
-      'liqueur',
+      'liqu',
+      'brandy',
+      'tequi',
     ],
     'Cakes and pastries': [
       'pie',
@@ -433,6 +435,7 @@ class Todo {
     ],
     'Dairy products': [
       'milk',
+      'butter',
       'yogurt',
       'cheese',
       'kefir',
@@ -759,7 +762,23 @@ class Todo {
 
             const el = this.#createTaskElem(item)
             this.#block.append(el)
-          } else {
+          }
+        }
+      })
+
+      this.#list.forEach((item) => {
+        const inAnyCategory = categories.some((category) =>
+          this.#categories[category].some((keyword) =>
+            item.text
+              .toLowerCase()
+              .includes(keyword.toLowerCase()),
+          ),
+        )
+
+        if (!inAnyCategory) {
+          const isEnglish = /^[A-Za-z0-9]+$/.test(item.text)
+
+          if (!isEnglish) {
             if (!cyrillicOtherCategoryExists) {
               const categoryItem =
                 document.createElement('div')
