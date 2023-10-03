@@ -10,15 +10,6 @@
   gap: 24px;
 }
 
-/* .title,
-.form {
-  position: fixed;
-  padding: 12px;
-  top: 0;
-  left: 0;
-  z-index: 1;
-} */
-
 .title {
   font-size: 24px;
   color: #212529;
@@ -67,12 +58,6 @@
   gap: 12px;
 }
 
-/* .task__list {
-  max-height: calc(100vh - 100px);
-  overflow-y: auto;
-  padding-top: 100px;
-} */
-
 .task {
   display: grid;
   grid-template-columns: auto 1fr auto auto;
@@ -111,11 +96,12 @@
   background-image: url('task_cancel.svg');
 }
 
-/* Зробіть заголовок фіксованим зверху */
 .title {
   position: fixed;
   background-color: #fff;
   padding: 12px;
+  margin-top: 0;
+
   max-width: 720px;
 
   top: 0;
@@ -130,14 +116,14 @@
   padding: 12px;
   max-width: 720px;
 
-  top: 56px; /* Відстань від верхнього краю до заголовка */
+  top: 44px; /* Відстань від верхнього краю до заголовка */
   left: calc((100% - 720px) / 2);
   z-index: 1;
 }
 
 /* Зробіть список прокручуваним */
 .task__list {
-  margin-top: 100px; /* Відстань знизу для врахування фіксованого заголовка і форми */
+  margin-top: 60px; /* Відстань знизу для врахування фіксованого заголовка і форми */
   overflow-y: auto;
   padding-top: 12px; /* Додатковий відступ зверху, якщо він потрібен */
 }
