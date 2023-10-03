@@ -109,23 +109,27 @@
   z-index: 1;
 }
 
-/* Зробіть форму фіксованою, але нижче заголовка */
 .form {
   position: fixed;
   background-color: #fff;
   padding: 12px;
   max-width: 720px;
 
-  top: 44px; /* Відстань від верхнього краю до заголовка */
+  top: 44px;
   left: calc((100% - 720px) / 2);
   z-index: 1;
 }
 
-/* Зробіть список прокручуваним */
 .task__list {
-  margin-top: 60px; /* Відстань знизу для врахування фіксованого заголовка і форми */
+  margin-top: 60px;
   overflow-y: auto;
-  padding-top: 12px; /* Додатковий відступ зверху, якщо він потрібен */
+  padding-top: 12px;
 }
 
-/*# sourceMappingURL=index.css.map */
+@media screen and (max-width: 720px) {
+  .title,
+  .form {
+    width: 90%;
+    left: 12px;
+  }
+}
